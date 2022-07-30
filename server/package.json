@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "./src/app.ts",
+  "scripts": {
+    "start": "rimraf dist && tsc-watch --onSuccess \"npm run watch:server\"",
+    "watch:server": "nodemon ./src/app.ts --watch './src/**/*'",
+    "lint": "eslint --cache --ext .js,.ts  src",
+    "lint:fix": "npm run lint -- --fix",
+    "typeorm": "node -r ts-node/register ./node_modules/typeorm/cli.js",
+    "migration:generate": "typeorm migration:create -n",
+    "migration:run": "npm run typeorm migration:run",
+    "migration:revert": "npm run typeorm migration:revert"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
+    "typeorm": "^0.2.43",
+    "joi": "^17.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/cors": "^2.8.12",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
