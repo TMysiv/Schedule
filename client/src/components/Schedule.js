@@ -70,7 +70,6 @@ const Schedule = () => {
                             fullWidth
                             variant="filled"
                             label="Станція прибуття"
-                            autoFocus
                             {...register('search')}
                             InputProps={{ endAdornment: <Button type={'submit'}>Пошук</Button> }}
                         />

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:5100/trains';
+const baseURL = 'api/trains';
 
 export const axiosService = axios.create({
     baseURL

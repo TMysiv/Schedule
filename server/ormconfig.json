@@ -1,9 +1,9 @@
 {
     "type": "mysql",
-    "host": "localhost",
+    "host": "db",
     "port": 3306,
-    "username": "root",
-    "password": "rootroot",
+    "username": "user",
+    "password": "user",
     "database": "trainschedule",
     "migrationsRun": true,
     "logging": false,
