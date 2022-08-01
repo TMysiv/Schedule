@@ -4,13 +4,12 @@ MAINTAINER Taras Mysiv
 
 RUN apk add bash
 
-RUN mkdir /app && chown -R node:node /app
+RUN mkdir -p /app
 COPY ./wait-for-it.sh /
 RUN chmod +x /wait-for-it.sh
-RUN chown node:node /wait-for-it.sh
 
-USER node
 WORKDIR /app
 
-COPY ./server/package.json .
-RUN npm install
+COPY ./server/ .
+RUN npm install && npm cache clean --force
+RUN npm run build
