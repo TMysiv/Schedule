@@ -24,4 +24,5 @@ app.listen(5100, async () => {
             console.log(err);
         }
     }
+    console.log('dsfa')
 });
